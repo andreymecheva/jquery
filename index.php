@@ -8,34 +8,15 @@
 
 </head>
 <body>
-<div class="container">
-<dl>
-	<dt>What are your hours?</dt>
-	<dd>We are open 24/7</dd>
-	<dt>What are your hours?</dt>
-	<dd>We are open 24/7</dd>
-	<dt>What are your hours?</dt>
-	<dd>We are open 24/7</dd>
-	<dt>What are your hours?</dt>
-	<dd>We are open 24/7</dd>
-	<dt>What are your hours?</dt>
-	<dd>We are open 24/7</dd>
-</dl>
+	<div class="container">
+<h2>Click me</h2>
+</div>
 <script>
-	(function(){
-		var dd = $('dd');
+$('div.container').delegate('h2','click', function(){
+	console.log('clicked');
+	$(this).clone().appendTo('body');
+});
 
-		dd.filter(':nth-child(n+4)').addClass('hide');
-		$('dt').on('mouseenter', function(){
-			$(this)
-				.next()
-					.slideDown(300)
-						.siblings('dd')
-							.slideUp(300);
-			
-		})
-
-	})();
 </script>
 </body>
 </html>
